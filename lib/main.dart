@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foot_stream/core/di/dependency_injection.dart';
 import 'package:foot_stream/core/routes/app_router.dart';
 import 'package:foot_stream/core/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +8,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  setupServiceLocator();
   runApp(const MyApp());
 }
 

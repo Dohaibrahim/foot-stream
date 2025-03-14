@@ -79,6 +79,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initSpeech() async {
     await TtsService().speak("  مرحبا بك في تطبيق foot stream  ");
     await TtsService().speech.awaitSpeakCompletion(true);
+    await Future.delayed(Duration(seconds: 1));
     //Navigator.pushReplacementNamed(context, Routes.signUpView);
     Navigator.pushNamed(context, Routes.signUpView);
   }

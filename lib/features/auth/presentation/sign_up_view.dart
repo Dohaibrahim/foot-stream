@@ -25,6 +25,15 @@ class SignUpView extends StatelessWidget {
           }
           if (state is SignInWithGoogleFailureState) {
             log("error happens in login bloc provider ${state.error}");
+            //this is will be deleted later
+            Navigator.pushReplacementNamed(
+              context,
+              Routes.homeView,
+              arguments: {
+                'userName': 'default user',
+                'userEmail': 'default email',
+              },
+            );
           }
         },
         child: const SafeArea(child: SignUpViewBody()),

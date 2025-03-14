@@ -19,7 +19,7 @@ class SignUpView extends StatelessWidget {
             final args = {'userName': state.name, 'userEmail': state.email};
             Navigator.pushReplacementNamed(
               context,
-              Routes.homeView,
+              Routes.bottomNavView,
               arguments: args,
             );
           }
@@ -28,10 +28,10 @@ class SignUpView extends StatelessWidget {
             //this is will be deleted later
             Navigator.pushReplacementNamed(
               context,
-              Routes.homeView,
+              Routes.bottomNavView,
               arguments: {
-                'userName': 'default user',
-                'userEmail': 'default email',
+                'userName': 'مستخدم جديد',
+                'userEmail': 'ليس معرف (موقتا)',
               },
             );
           }

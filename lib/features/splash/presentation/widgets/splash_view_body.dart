@@ -81,7 +81,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     await TtsService().speech.awaitSpeakCompletion(true);
     await Future.delayed(Duration(seconds: 1));
     //Navigator.pushReplacementNamed(context, Routes.signUpView);
-    Navigator.pushNamed(context, Routes.signUpView);
+    Navigator.pushReplacementNamed(context, Routes.signUpView);
   }
 
   @override

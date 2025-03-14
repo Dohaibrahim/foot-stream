@@ -24,6 +24,12 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
     speechinit();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    TtsService().stop();
+  }
+
   Future<void> speechinit() async {
     await TtsService().speak(
       "انت الان في صفحه تسجيل الدخول ، يمكنك تسجيل الدخول عن طريق  Google ام Apple ",

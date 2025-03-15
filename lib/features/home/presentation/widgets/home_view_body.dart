@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:foot_stream/core/routes/routes.dart';
 
 import 'package:foot_stream/core/utils/constants.dart';
 import 'package:foot_stream/core/utils/shared_prefrences_helper.dart';
@@ -38,8 +39,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       future: SharedPrefHelper.getStringNullable(SharedPrefKeys.userName),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
-            child: CircularProgressIndicator(color: Colors.blue),
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [CircularProgressIndicator(color: Colors.blue)],
           );
         } else if (snapshot.hasError) {
           return Center(
@@ -66,11 +69,19 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   itemCount: state.matches.length,
                   itemBuilder: (context, index) {
                     return MatchCard(
+                      onTap: () {
+                        final args = state.matches[index];
+                        Navigator.pushNamed(
+                          context,
+                          Routes.matchVideoScreenView,
+                          arguments: args,
+                        );
+                      },
                       teamX: state.matches[index].teamX,
                       teamY: state.matches[index].teamY,
                       xResult: state.matches[index].result.xResult,
                       yResult: state.matches[index].result.yResult,
-                      date: state.matches[index].date.toString(),
+                      date: state.matches[index].date,
                     );
                   },
                 );

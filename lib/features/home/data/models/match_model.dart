@@ -37,11 +37,6 @@ class MatchModel {
       date: map["date"] ?? Timestamp.now(),
       location: map["location"] ?? "Unknown",
       referee: map["referee"] ?? "Unknown",
-      /*result: {
-        "xResult": map["result"]?["xResult"] ?? 0,
-        "yResult": map["result"]?["yResult"] ?? 0,
-      },*/
-      // Ensuring correct mapping
       result: Result.fromMap(map['result']),
       videoUrl: map["videoUrl"] ?? "",
       analysisText: map["analysisText"] ?? "No analysis available",

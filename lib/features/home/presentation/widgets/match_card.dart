@@ -20,7 +20,7 @@ class MatchCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         width: 200,
         height: 130,
         decoration: BoxDecoration(

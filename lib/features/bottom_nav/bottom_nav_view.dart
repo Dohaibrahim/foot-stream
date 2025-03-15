@@ -44,14 +44,14 @@ class _BottomNavViewState extends State<BottomNavView> {
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              label: 'Home',
+              label: 'االرئيسية',
               icon: ImageIcon(
                 size: 29,
                 AssetImage('assets/images/home (2).png'),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Settings',
+              label: 'الاعدادات',
               icon: ImageIcon(
                 size: 29,
                 AssetImage('assets/images/settings.png'),

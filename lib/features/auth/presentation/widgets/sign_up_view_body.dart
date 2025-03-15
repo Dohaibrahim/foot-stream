@@ -26,8 +26,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
   @override
   void dispose() {
-    super.dispose();
     TtsService().stop();
+    super.dispose();
   }
 
   Future<void> speechinit() async {

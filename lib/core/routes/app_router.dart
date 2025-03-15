@@ -8,6 +8,9 @@ import 'package:foot_stream/features/bottom_nav/bottom_nav_view.dart';
 import 'package:foot_stream/features/home/domain/repo/match_repo.dart';
 import 'package:foot_stream/features/home/presentation/home_view.dart';
 import 'package:foot_stream/features/home/presentation/manager/match_cubit.dart';
+import 'package:foot_stream/features/home/presentation/match_details_view.dart';
+import 'package:foot_stream/features/home/presentation/match_video_screen_view.dart';
+import 'package:foot_stream/features/settings/presentation/stadium_guide_view.dart';
 import 'package:foot_stream/features/splash/presentation/splash_view.dart';
 
 class AppRouter {
@@ -34,6 +37,17 @@ class AppRouter {
           builder: (_) => BottomNavView(),
           settings: settings,
         );
+
+      case Routes.stadiumGuideView:
+        return MaterialPageRoute(builder: (_) => StadiumGuideView());
+
+      case Routes.matchVideoScreenView:
+        return MaterialPageRoute(
+          builder: (_) => MatchVideoScreenView(),
+          settings: settings,
+        );
+      case Routes.matchDetailsView:
+        return MaterialPageRoute(builder: (_) => MatchDetailsView());
     }
 
     return null;

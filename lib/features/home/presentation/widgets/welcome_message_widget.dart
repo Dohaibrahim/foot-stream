@@ -17,7 +17,10 @@ class WelcomeTextWidget extends StatelessWidget {
       child: Text(
         "مرحبا ، $userName",
         textAlign: TextAlign.end,
-        style: TextStyles.font20w700.copyWith(fontWeight: FontWeight.w400),
+        style: TextStyles.font20w700.copyWith(
+          fontWeight: FontWeight.w400,
+          fontSize: 23,
+        ),
       ),
     );
   }

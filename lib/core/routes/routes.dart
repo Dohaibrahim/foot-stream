@@ -6,4 +6,6 @@ class Routes {
   static const String matchVideoScreenView = '/matchVideoScreenView';
   static const String stadiumGuideView = '/stadiumGuideView';
   static const String matchDetailsView = '/matchDetailsView';
+  static const String aboutAppView = '/aboutAppView';
+  static const String audioSpeedView = '/audioSpeedView';
 }

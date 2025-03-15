@@ -2,11 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_tts/flutter_tts.dart';
+
 import 'package:foot_stream/core/routes/routes.dart';
 
 import 'package:foot_stream/core/utils/constants.dart';
 import 'package:foot_stream/core/utils/shared_prefrences_helper.dart';
+import 'package:foot_stream/core/widgets/speech_handler_widget.dart';
 import 'package:foot_stream/features/home/presentation/manager/match_cubit.dart';
 import 'package:foot_stream/features/home/presentation/manager/match_state.dart';
 import 'package:foot_stream/features/home/presentation/widgets/match_card.dart';
@@ -22,13 +23,13 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
-    FlutterTts().speak("انت الان في الصفحة الرئيسية. اختر مباراة لمشاهدتها");
+    TtsService().speak("انت الان في الصفحة الرئيسية. اختر مباراة لمشاهدتها");
     super.initState();
   }
 
   @override
   void dispose() {
-    FlutterTts().stop();
+    TtsService().stop();
     super.dispose();
   }
 

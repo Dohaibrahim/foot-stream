@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
+
 import 'package:foot_stream/core/routes/routes.dart';
+import 'package:foot_stream/core/widgets/speech_handler_widget.dart';
 import 'package:foot_stream/features/home/data/models/match_model.dart';
 import 'package:foot_stream/features/home/presentation/widgets/video_player_widget.dart';
 
@@ -20,13 +21,13 @@ class _MatchVideoScreenBodyState extends State<MatchVideoScreenBody> {
   }
 
   Future<void> _initSpeech() async {
-    await FlutterTts().speak("انت الان ستسمع التعليق الصوتي الخاص بالمباراة ");
-    await FlutterTts().speak(widget.matchModel.analysisText);
+    await TtsService().speak("انت الان ستسمع التعليق الصوتي الخاص بالمباراة ");
+    await TtsService().speak(widget.matchModel.analysisText);
   }
 
   @override
   void dispose() {
-    FlutterTts().stop();
+    TtsService().stop();
     super.dispose();
   }
 

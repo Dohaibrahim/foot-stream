@@ -36,4 +36,14 @@ class TtsService {
   Future<void> stop() async {
     await speech.stop();
   }
+
+  Future<void> setNewVolume(double newValue) async {
+    Constants.speechVolume = newValue;
+    await speech.setVolume(Constants.speechVolume);
+  }
+
+  Future<void> setNewRate(double newValue) async {
+    Constants.speechRate = newValue;
+    await speech.setSpeechRate(Constants.speechRate);
+  }
 }

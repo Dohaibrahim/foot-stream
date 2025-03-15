@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
+import 'package:foot_stream/core/widgets/speech_handler_widget.dart';
 
 class StadiumGuideViewBody extends StatefulWidget {
   const StadiumGuideViewBody({super.key});
@@ -43,13 +43,13 @@ class _StadiumGuideViewBodyState extends State<StadiumGuideViewBody> {
   }
 
   Future<void> _initTts() async {
-    await FlutterTts().speak(audioGuideText);
+    await TtsService().speak(audioGuideText);
   }
 
   @override
   void dispose() async {
     super.dispose();
-    await FlutterTts().stop();
+    await TtsService().stop();
   }
 
   @override

@@ -28,7 +28,7 @@ class VibrationManager {
         await Vibrate.canVibrate; // Check if device supports vibration
 
     if (isEnabled && canVibrate) {
-      Vibrate.feedback(FeedbackType.medium);
+      Vibrate.feedback(FeedbackType.heavy);
       debugPrint("✅ Vibration Triggered on iOS Device");
     } else {
       debugPrint("❌ Vibration not supported or disabled in settings.");

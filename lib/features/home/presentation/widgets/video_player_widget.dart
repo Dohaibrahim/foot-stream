@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
-import 'package:video_player/video_player.dart';
+import 'package:flutter/services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
@@ -17,12 +16,14 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void initState() {
     super.initState();
+    // Ensure other audio sources (like TTS) continue playing
+    //SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     videoId = YoutubePlayer.convertUrlToId(widget.videoUrl);
     _controller = YoutubePlayerController(
       initialVideoId:
           videoId ??
           'nTDqw140q-E', //'nTDqw140q-E', // Extracted YouTube video ID
-      flags: YoutubePlayerFlags(autoPlay: true, mute: false, loop: false),
+      flags: YoutubePlayerFlags(autoPlay: true, mute: true, loop: false),
     );
   }
 

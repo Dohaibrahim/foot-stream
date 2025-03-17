@@ -55,7 +55,11 @@ class _MatchVideoScreenBodyState extends State<MatchVideoScreenBody> {
             minWidth: screenWidth * 0.90,
             height: screenHeight * 0.05,
             onPressed: () {
-              Navigator.pushNamed(context, Routes.matchDetailsView);
+              Navigator.pushNamed(
+                context,
+                Routes.matchDetailsView,
+                arguments: widget.matchModel,
+              );
             },
             shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),

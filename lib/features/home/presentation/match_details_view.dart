@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foot_stream/features/home/data/models/match_model.dart';
 import 'package:foot_stream/features/home/presentation/widgets/match_details_view_body.dart';
 
 class MatchDetailsView extends StatelessWidget {
@@ -6,6 +7,10 @@ class MatchDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: MatchDetailsViewBody());
+    final args = ModalRoute.of(context)!.settings.arguments as MatchModel;
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(child: MatchDetailsViewBody(matchModel: args)),
+    );
   }
 }

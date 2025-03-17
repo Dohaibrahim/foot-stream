@@ -17,13 +17,13 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   void initState() {
     super.initState();
     // Ensure other audio sources (like TTS) continue playing
-    //SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     videoId = YoutubePlayer.convertUrlToId(widget.videoUrl);
     _controller = YoutubePlayerController(
       initialVideoId:
           videoId ??
           'nTDqw140q-E', //'nTDqw140q-E', // Extracted YouTube video ID
-      flags: YoutubePlayerFlags(autoPlay: true, mute: true, loop: false),
+      flags: YoutubePlayerFlags(autoPlay: true, mute: false, loop: false),
     );
   }
 
@@ -37,6 +37,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   Widget build(BuildContext context) {
     return Center(
       child: YoutubePlayer(
+        key: UniqueKey(),
         controller: _controller,
         showVideoProgressIndicator: true,
         progressIndicatorColor: Colors.red,

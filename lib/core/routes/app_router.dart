@@ -55,7 +55,10 @@ class AppRouter {
         );
       case Routes.matchDetailsView:
         VibrationManager.vibrate();
-        return MaterialPageRoute(builder: (_) => MatchDetailsView());
+        return MaterialPageRoute(
+          builder: (_) => MatchDetailsView(),
+          settings: settings,
+        );
 
       case Routes.audioSpeedView:
         VibrationManager.vibrate();

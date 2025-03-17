@@ -11,7 +11,6 @@ import 'package:foot_stream/core/widgets/speech_handler_widget.dart';
 import 'package:foot_stream/features/home/presentation/manager/match_cubit.dart';
 import 'package:foot_stream/features/home/presentation/manager/match_state.dart';
 import 'package:foot_stream/features/home/presentation/widgets/match_card.dart';
-import 'package:foot_stream/features/home/presentation/widgets/welcome_message_widget.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});

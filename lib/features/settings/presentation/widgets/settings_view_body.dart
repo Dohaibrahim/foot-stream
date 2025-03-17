@@ -81,7 +81,6 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
             },
             title: 'تواصل معنا',
           ),
-          SettingItem(onTap: () {}, title: 'الاهتزازات'),
           SettingItem(
             onTap: () {
               Navigator.pushNamed(context, Routes.aboutAppView);

@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>UIBackgroundModes</key>
+    <array>
+    <string>to allow match with audio screen to play the sound of match and the audio guide together</string>
+    </array>
     <key>NSMicrophoneUsageDescription</key>
     <string>We need microphone access for vibration feedback</string>
 

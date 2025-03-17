@@ -22,8 +22,7 @@ class _BottomNavViewState extends State<BottomNavView> {
 
   @override
   Widget build(BuildContext context) {
-    final args =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    //final args =ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     return Scaffold(
       body: screens[selectedIndex],
       bottomNavigationBar: Theme(
@@ -44,7 +43,7 @@ class _BottomNavViewState extends State<BottomNavView> {
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              label: 'االرئيسية',
+              label: 'الرئيسية',
               icon: ImageIcon(
                 size: 29,
                 AssetImage('assets/images/home (2).png'),

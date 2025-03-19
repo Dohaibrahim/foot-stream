@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foot_stream/core/routes/routes.dart';
+import 'package:foot_stream/core/utils/shared_prefrences_helper.dart';
+import 'package:foot_stream/core/widgets/speech_handler_widget.dart';
 import 'package:foot_stream/core/widgets/vibration_handler.dart';
 import 'package:foot_stream/features/settings/presentation/widgets/contact_us.dart';
 import 'package:foot_stream/features/settings/presentation/widgets/setting_item.dart';
@@ -15,8 +17,19 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
   late bool isVibrate = true;
   @override
   void initState() {
+    _initTts();
     super.initState();
     _loadVibrationSetting();
+  }
+
+  @override
+  void dispose() {
+    TtsService().stop();
+    super.dispose();
+  }
+
+  Future<void> _initTts() async {
+    await TtsService().speak("انت الان في صفحه الاعدادات");
   }
 
   Future<void> _loadVibrationSetting() async {
@@ -52,7 +65,12 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
       child: Column(
         children: [
-          SettingItem(onTap: () {}, title: 'عن المستخدم'),
+          SettingItem(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.aboutUserView);
+            },
+            title: 'عن المستخدم',
+          ),
           SettingItem(
             onTap: _toggleVibration,
             title: isVibrate ? 'تعطيل الاهتزازات' : 'تفعيل الاهتزازات',
@@ -87,7 +105,13 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
             },
             title: 'عن التطبيق',
           ),
-          SettingItem(onTap: () {}, title: 'تسجيل الخروج'),
+          SettingItem(
+            onTap: () async {
+              await SharedPrefHelper.clearAllData();
+              Navigator.pushReplacementNamed(context, Routes.signUpView);
+            },
+            title: 'تسجيل الخروج',
+          ),
         ],
       ),
     );

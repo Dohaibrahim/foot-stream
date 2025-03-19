@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foot_stream/features/home/presentation/home_view.dart';
+import 'package:foot_stream/features/live_match/presentation/live_match_view.dart';
 import 'package:foot_stream/features/settings/presentation/settings_view.dart';
 
 class BottomNavView extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BottomNavViewState extends State<BottomNavView> {
   void initState() {
     super.initState();
 
-    screens = [HomeView(), SettingsView()];
+    screens = [HomeView(), LiveMatchView(), SettingsView()];
   }
 
   @override
@@ -48,6 +49,10 @@ class _BottomNavViewState extends State<BottomNavView> {
                 size: 29,
                 AssetImage('assets/images/home (2).png'),
               ),
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(size: 29, AssetImage('assets/icons/match.png')),
+              label: 'المباريات المباشره',
             ),
             BottomNavigationBarItem(
               label: 'الاعدادات',

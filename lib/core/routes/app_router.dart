@@ -12,6 +12,7 @@ import 'package:foot_stream/features/home/presentation/manager/match_cubit.dart'
 import 'package:foot_stream/features/home/presentation/match_details_view.dart';
 import 'package:foot_stream/features/home/presentation/match_video_screen_view.dart';
 import 'package:foot_stream/features/settings/presentation/about_app_view.dart';
+import 'package:foot_stream/features/settings/presentation/about_user_view.dart';
 import 'package:foot_stream/features/settings/presentation/audio_speed_view.dart';
 import 'package:foot_stream/features/settings/presentation/stadium_guide_view.dart';
 import 'package:foot_stream/features/splash/presentation/splash_view.dart';
@@ -67,6 +68,10 @@ class AppRouter {
       case Routes.aboutAppView:
         VibrationManager.vibrate();
         return MaterialPageRoute(builder: (_) => AboutAppView());
+
+      case Routes.aboutUserView:
+        VibrationManager.vibrate();
+        return MaterialPageRoute(builder: (_) => AboutUserView());
     }
 
     return null;

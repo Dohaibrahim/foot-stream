@@ -8,4 +8,5 @@ class Routes {
   static const String matchDetailsView = '/matchDetailsView';
   static const String aboutAppView = '/aboutAppView';
   static const String audioSpeedView = '/audioSpeedView';
+  static const String aboutUserView = '/aboutUserView';
 }

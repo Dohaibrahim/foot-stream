@@ -44,7 +44,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         bottomActions: [
           CurrentPosition(),
           ProgressBar(isExpanded: true),
-          PlaybackSpeedButton(),
+          //PlaybackSpeedButton(),
           // No FullscreenButton here (removes the rotate/fullscreen button)
         ],
       ),

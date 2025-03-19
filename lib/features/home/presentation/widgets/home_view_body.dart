@@ -22,14 +22,15 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
-    TtsService().speak("انت الان في الصفحة الرئيسية. اختر مباراة لمشاهدتها");
+    //_initTts();
+    //TtsService().speak("انت الان في الصفحة الرئيسية. اختر مباراة لمشاهدتها");
     super.initState();
   }
 
-  @override
-  void dispose() {
-    TtsService().stop();
-    super.dispose();
+  Future<void> _initTts() async {
+    await TtsService().speak(
+      "انت الان في الصفحة الرئيسية. اختر مباراة لمشاهدتها",
+    );
   }
 
   @override
@@ -53,10 +54,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           );
         } else {
           String userName = snapshot.data ?? "مستخدم جديد";
+          // 🔹 Speak only once after UI is built
+
           return BlocConsumer<MatchCubit, MatchState>(
             builder: (context, state) {
               if (state is MatchLoadingState) {
-                return CircularProgressIndicator(color: Colors.blue);
+                return Center(
+                  child: CircularProgressIndicator(color: Colors.blue),
+                );
               } else if (state is MatchFailureState) {
                 return Center(
                   child: Text(

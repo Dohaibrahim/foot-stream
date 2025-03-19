@@ -30,6 +30,7 @@ class TtsService {
   }
 
   Future<void> speak(String text) async {
+    await speech.awaitSpeakCompletion(true);
     await speech.speak(text);
   }
 
